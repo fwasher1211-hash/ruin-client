@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "ruin",
+  "version": "${version}",
+  "name": "Ruin Client",
+  "description": "Custom themed client UI and modular PvP practice toolkit.",
+  "environment": "client",
+  "entrypoints": { "client": ["com.ruin.client.RuinClient"] },
+  "depends": { "fabricloader": ">=0.16.0", "minecraft": "1.21.11", "java": ">=21", "fabric-api": "*" }
+}
