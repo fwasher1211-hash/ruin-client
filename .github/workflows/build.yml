@@ -22,15 +22,16 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.2.1'
 
       - name: Build Ruin Client
-        run: |
-          cd Ruin-Client
-          chmod +x gradlew
-          ./gradlew build --no-daemon
+        working-directory: Ruin-Client
+        run: gradle build --no-daemon
 
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: Ruin-Client
           path: Ruin-Client/build/libs/*.jar
+          if-no-files-found: error
